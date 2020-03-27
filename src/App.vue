@@ -21,7 +21,7 @@
             <b-card-body v-if="todo.editing" class="label-item" variant="outline-primary">
               <md-input v-model="todo.label" @keydown.enter="exitEdit(todo)" @focusout="exitEdit(todo)"></md-input>
             </b-card-body>
-            <b-card-body class="btns">
+            <b-card-footer class="btns">
               <b-button pill v-if="!todo.editing" variant="outline-info" class="md-fab md-mini md-plain edit-btn" @click="editTodo(todo)">
                 <md-icon>edit</md-icon>
               </b-button>
@@ -31,7 +31,7 @@
               <b-button pill v-if="todo.editing" variant="outline-info" class="md-raised md-mini md-accent save-btn" @click="exitEdit(todo)">
                 Save
               </b-button>
-            </b-card-body>
+            </b-card-footer>
           </b-card>
         </li>
       </b-card-group>
@@ -107,7 +107,6 @@ body {
 }
 
 .delete-btn, edit-btn {
-  display: flex;
-  justify-content: flex-end;
+  display: inline-block;
 }
 </style>
